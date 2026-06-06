@@ -129,6 +129,7 @@ header p { color: #EFEBE0; font-size: 1.1rem; }
 /* Itt van a te eredeti preview-box beállításod visszaállítva */
 .preview-box {
     margin: 2px;
+    box-sizing: border-box;
     border: 1px solid #e5e7eb;
     background: #f3f4f6;
     overflow: hidden;
@@ -183,6 +184,7 @@ footer a { color: var(--primary); text-decoration: none; }
 
     .preview-box {
         max-width: 100%;
+        margin: 0;
     }
 
     /* Inline méretek felülírása mobilra */
@@ -193,53 +195,79 @@ footer a { color: var(--primary); text-decoration: none; }
     }
 
     .preview-box[style*="width: 300px; height: 250px;"] {
-        width: min(100%, 300px) !important;
-        height: auto !important;
-        aspect-ratio: 6 / 5;
+        width: 300px !important;
+        height: 250px !important;
+        max-width: 300px;
+        aspect-ratio: auto;
     }
 
-    .preview-box[style*="width: 160px; height: 600px;"] {
+    /* Premium Social: maradjon a desktop skálázás logika, csak a box legyen biztosan 300 */
+    .preview-box-1200,
+    .preview-box-1080 {
+        width: min(100%, 300px) !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Yettel multi-size: stabil, osztály alapú mobil méretezés */
+    .multi-size-item {
+        width: 100%;
+        align-items: center;
+    }
+
+    .multi-size-item--160x600 .preview-box {
         width: min(100%, 160px) !important;
         height: auto !important;
         aspect-ratio: 4 / 15;
     }
 
-    .preview-box[style*="width: 300px; height: 600px;"] {
+    .multi-size-item--300x250 .preview-box {
+        width: min(100%, 300px) !important;
+        height: auto !important;
+        aspect-ratio: 6 / 5;
+    }
+
+    .multi-size-item--300x600 .preview-box {
         width: min(100%, 300px) !important;
         height: auto !important;
         aspect-ratio: 1 / 2;
     }
 
-    .preview-box[style*="width: 320px; height: 480px;"] {
+    .multi-size-item--320x480 .preview-box {
         width: min(100%, 320px) !important;
         height: auto !important;
         aspect-ratio: 2 / 3;
     }
 
-    .preview-box[style*="width: 320px; height: 50px;"] {
+    .multi-size-item--320x50 .preview-box {
         width: min(100%, 320px) !important;
         height: auto !important;
         aspect-ratio: 32 / 5;
     }
 
-    .preview-box[style*="width: 640px; height: 360px;"] {
-        width: min(100%, 640px) !important;
+    .multi-size-item--640x360 .preview-box {
+        width: min(100%, 320px) !important;
         height: auto !important;
         aspect-ratio: 16 / 9;
     }
 
-    .preview-box[style*="width: 728px; height: 90px;"] {
-        width: min(100%, 728px) !important;
-        height: auto !important;
-        aspect-ratio: 364 / 45;
+    .multi-size-item--640x360 .preview-box iframe {
+        width: 640px;
+        height: 360px;
+        transform: scale(0.5);
+        transform-origin: top left;
     }
 
-    /* 1200/1080-as preview-k mobilon ne lógjanak túl */
-    .preview-box-1200 iframe,
-    .preview-box-1080 iframe {
-        width: 100% !important;
-        height: 100% !important;
-        position: static;
-        transform: none;
+    .multi-size-item--728x90 .preview-box {
+        width: min(100%, 320px) !important;
+        height: 39.56px !important;
+        aspect-ratio: auto;
+    }
+
+    .multi-size-item--728x90 .preview-box iframe {
+        width: 728px;
+        height: 90px;
+        transform: scale(0.4396);
+        transform-origin: top left;
     }
 }
