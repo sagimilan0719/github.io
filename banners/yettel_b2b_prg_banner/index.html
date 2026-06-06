@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{advert_name}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="{{advert_name}}" />
+    <meta
+      name="targeting_audiences_names"
+      content="{{targeting_audiences_names}}"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="300x250.css" />
+
+    <script src="font-resizer.min.js"></script>
+
+    <style>
+      @font-face {
+        font-family: "Yettel-Bold";
+        src: url("Yettel-Bold.woff2");
+      }
+      @font-face {
+        font-family: "Yettel-Light";
+        src: url("Yettel-Light.woff2");
+      }
+      @font-face {
+        font-family: "Yettel-Regular";
+        src: url("Yettel-Regular.woff2");
+      }
+    </style>
+
+    <script>
+      (function applySizeFromQuery() {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const size = params.get("size");
+          if (!size) return;
+
+          const sizeLink = document.querySelector('link[href$="300x250.css"]');
+          if (sizeLink) {
+            sizeLink.setAttribute("href", `${size}.css`);
+          }
+        } catch (error) {
+        }
+      })();
+    </script>
+  </head>
+  <body onclick="onAdClickEvent()">
+    <main
+      class="click_url template_variant_class {{template_variant_class}}"
+      href="{{click_url}}"
+    >
+      <div class="content">
+        <div class="product_image_container_4 product_image_container">
+          <div
+            class="product_image background_image_4"
+            style="background-image: url('cukrasz_ffi_04_prg.jpg');"
+            aria-label="Product Image"
+          ></div>
+        </div>
+        <div class="logo_container">
+          <img class="logo_lime logo_image" src="yettel-logo_lime.png" alt="logo" />
+        </div>
+        <div class="bubble bubble_2 bubble-bottom-right">
+          <div class="chat_text_container chat_text_container_2">
+            <p
+              class="chat_text chat_text_1 headline_text_1 headline_style_1"
+              style="{{headline_style_1}}"
+            >
+              <span class="bold-text">Hűségidő nélkül</span> mire számíthatok?
+            </p>
+          </div>
+        </div>
+        <div class="bubble bubble_1 bubble-bottom-left">
+          <div class="chat_text_container chat_text_container_1">
+            <p
+              class="chat_text chat_text_2 headline_text_2 headline_style_1"
+              style="{{headline_style_2}}"
+            >
+              <span class="bold-text">Yettel Business Reflex:</span> hűségidő nélküli tarifák, <span class="bold-text">ugyanolyan áron,</span> mint hűségidővel készülékkel együtt
+            </p>
+          </div>
+        </div>
+        <div class="cta_design">
+          <div class="cta_container">
+            <p class="cta_text">Megnézem</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

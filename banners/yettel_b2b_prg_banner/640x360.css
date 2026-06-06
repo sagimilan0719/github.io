@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+:root {
+  /* Kézi állítások a háttérképhez */
+  --img-wrap-left: 0px;
+  --img-wrap-top: 0px;
+  --img-wrap-width: 640px;
+  --img-wrap-height: 360px;
+  --img-pos-x: 50%;
+  --img-pos-y: 50%;
+  --img-scale: 1;
+}
+
+html,
+body,
+.content {
+  width: 640px;
+  height: 360px;
+  font-size: 10px;
+}
+
+.logo_container {
+  width: 14rem;
+  height: 10rem;
+  right: 0;
+  bottom: -0.2rem;
+}
+
+.product_image_container {
+  left: var(--img-wrap-left);
+  top: var(--img-wrap-top);
+  right: auto;
+  width: var(--img-wrap-width);
+  height: var(--img-wrap-height);
+}
+
+.product_image {
+    background-size: 108%;
+    background-position-x: 77%;
+    background-position-y: 31%;
+}
+
+.chat_text_container {
+  font-size: 2rem;
+  min-height: 5rem;
+}
+
+.bubble_1 {
+  right: 2rem;
+  bottom: 10rem;
+  max-width: 20.9rem;
+}
+
+.bubble_2 {
+    left: 19rem;
+    bottom: 23rem;
+    max-width: 20.8rem;
+    padding: 3rem 2rem !important;
+    scale: 0.90;
+}
+
+.cta_design {
+  bottom: 3rem;
+  left: 2.5rem;
+  width: 18rem;
+  height: 4.8rem;
+}
+
+.cta_text {
+    font-size: 25px;
+}

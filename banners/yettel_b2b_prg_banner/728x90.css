@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+:root {
+  /* Kézi állítások a háttérképhez */
+  --img-wrap-left: 0px;
+  --img-wrap-top: 0px;
+  --img-wrap-width: 728px;
+  --img-wrap-height: 90px;
+  --img-pos-x: 50%;
+  --img-pos-y: 50%;
+  --img-scale: 1;
+}
+
+html,
+body,
+.content {
+  width: 728px;
+  height: 90px;
+  font-size: 4px;
+}
+
+.logo_container {
+  width: 19rem;
+  height: 14rem;
+  right: 0;
+  bottom: -0.5rem;
+}
+
+.product_image_container {
+  top: var(--img-wrap-top);
+  left: var(--img-wrap-left);
+  bottom: auto;
+  right: auto;
+  width: var(--img-wrap-width);
+  height: var(--img-wrap-height);
+}
+
+.product_image {
+  background-size: cover;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+
+.product_image_container_4 {
+  display: none;
+}
+
+.chat_text_container {
+  min-height: 5rem;
+}
+
+.bubble_1 {
+  right: 22.3rem;
+  max-width: 70.9rem;
+  font-size: 4rem;
+  top: 2rem;
+  background: var(--yettel-dark-blue) !important;
+  color: var(--yettel-lime) !important;
+}
+
+.bubble_1:before {
+  border-left: 2rem solid var(--yettel-dark-blue) !important;
+  border-top: 2rem solid var(--yettel-dark-blue) !important;
+}
+
+.logo_lime {
+  content: url("yettel-logo_navy.png");
+}
+
+.bubble_2 {
+  left: 33rem;
+  bottom: 5rem;
+  max-width: 38rem;
+  font-size: 4rem;
+}
+
+.cta_design {
+  bottom: 3rem;
+  left: 2.5rem;
+  width: 24rem;
+  height: 6.8rem;
+}
+
+.cta_text {
+    font-size: 13px;
+}

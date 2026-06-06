@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="advert_name" content="{{advert_name}}" />
+        <meta
+          name="targeting_audiences_names"
+          content="{{targeting_audiences_names}}"
+        />
+    <!-- CSS -->	
+    	<link rel="stylesheet" type="text/css" href="main.css" />
+    	<link rel="stylesheet" type="text/css" href="1080x1080.css" />
+    	<script src="font-resizer.js"></script>
+    </head>
+<!--
+kupon
+alwayson
+thm (-> monthly payment is only seen when thm is applied)
+
+freeDelivery
+kupon_freeDelivery
+-->
+
+   <body>
+        	<main class="click_url template_variant_class thm freeDelivery" href="{{click_url}}">
+    	    
+	<div class="content_intro content_intro_1">
+        		<div class="logo_container">
+        			<img class="fizz_logo_evindito.svg" alt="Fizz logó" src="fizz_szuli_logo.png" />
+        			<img class="logo alwayson_logo" alt="AlwaysOn logó" src="logo-otp-fizz-white.svg">
+        		</div>
+        		<div class="discount_container">
+            		<p class="discount_text_1">-12%</p>
+        		</div>
+        	</div>
+        	</div>
+        	<div class="content">
+            	<div class="headline_container_design">
+                    <div class="headline_container_1">
+                        <p class="headline_text_1">3-10 havi 0% THM!</p>
+                    </div>
+                </div>
+    			<div class="product_name_container_design">
+    			    <div class="product_name_container">
+    				    <p class="product_name">AIWA 43GO60804 FHD TV Infinity X Series Google TV</p>
+    			    </div>
+    			</div>
+    			<div class="prices">
+        			<div class="monthly_payment_container_design">
+        			    <div class="monthly_payment_container">
+        				    <p class="monthly_payment">5.650 Ft / hó *</p>
+        			    </div>
+        			</div>
+        			<div class="original_price_container_design">
+        			    <div class="original_price_container">
+        				    <p class="original_price_text">119.990 Ft</p>
+        			    </div>
+        			</div>
+        			<div class="price_container_design">
+        			    <div class="price_container">
+        				    <p class="price_text">112.990 Ft</p>
+        			    </div>
+        			</div>
+    			</div>
+    		</div>
+    		<div class="distributor_design">
+        			<div class="distributor_container">
+        			    <p class="distributor_text">Hifi Station</p>
+        			</div>
+        		</div>
+    		<div class="product_image_container">
+                    <img class="product_url product_image_url" src="tv.png">
+                    </div>
+    		</div>
+    		
+			<div class="disclaimer_design">
+                <div class="disclaimer_container">
+                    <p class="disclaimer_text">Az ajánlat 2025.06.19. és 2025.07.07. között érvényes, hitelösszeg 30.000 Ft és 1.500.000 Ft között.</p>
+                </div>
+            </div>
+
+            <div class="freeDelivery_container">
+                <img src="freeDelivery.svg" alt="Ingyenes szállítás" class="freeDelivery_image freeDelivery_simple"/>
+                <img src="kupon_free_delivery.svg" alt="Ingyenes szállítás" class="freeDelivery_image freeDelivery_kupon"/>
+            </div>
+    	</main>
+    
+	    <script type="text/javascript">
+            const fizzMain = document.querySelector('.template_variant_class');
+            const fizzParams = new URLSearchParams(window.location.search);
+            const hasVariantParam = fizzParams.has('variant');
+            const variantRaw = hasVariantParam
+                ? (fizzParams.get('variant') || '')
+                : 'thm freeDelivery';
+
+            if (fizzMain) {
+                fizzMain.classList.remove('kupon', 'alwayson', 'thm', 'freeDelivery', 'kupon_freeDelivery');
+
+                const variantClasses = variantRaw
+                    .split(/\s+/)
+                    .map(cls => cls.trim())
+                    .filter(Boolean);
+
+                if (variantClasses.length) {
+                    fizzMain.classList.add(...variantClasses);
+                }
+            }
+
+            (function setHeadlineIfNoThm() {
+                try {
+                    if (!fizzMain) return;
+                    const headlineEl = fizzMain.querySelector('.headline_text_1');
+                    if (!fizzMain.classList.contains('thm') && headlineEl) {
+                        headlineEl.textContent = 'Akár ingyenes szállítással';
+                    }
+                } catch (e) {
+                    // no-op
+                }
+            })();
+
+            resizer('.product_name_container', {
+                minFontSize: 9,
+                maxFontSize: 100,
+                checkWidth: true,
+                checkHeight: true,
+                wordWrap: true,
+                resizer: true,
+                timeout: 80,
+                resize: 3,
+                debug: false
+            });
+        
+            resizer('.headline_container_1', {
+                minFontSize: 12,
+                maxFontSize: 60,
+                checkWidth: true,
+                checkHeight: true,
+                wordWrap: true,
+                resizer: true,
+                timeout: 90,
+                resize: 2,
+                debug: false
+            });
+            
+            resizer('.price_container', {
+                minFontSize: 12,
+                maxFontSize: 92,
+                checkWidth: true,
+                checkHeight: true,
+                wordWrap: true,
+                resizer: true,
+                timeout: 90,
+                resize: 2,
+                debug: false
+            });
+        
+            // Function to check if an element is empty and hide its parent
+      function hideIfEmpty(textSelector, parentSelector) {
+        const textElement = document.querySelector(textSelector);
+        if (!textElement || textElement.textContent.trim() === "") {
+          const parentElement = document.querySelector(parentSelector);
+          if (parentElement) {
+            parentElement.style.display = "none";
+          }
+        }
+      }
+
+      setTimeout(function () {
+        hideIfEmpty(".monthly_payment", ".monthly_payment_container_design");
+        hideIfEmpty(".discount_text_1", ".discount_container");
+        hideIfEmpty(".original_price_text", ".original_price_container_design");
+      }, 70);
+        </script>
+    </body>
+</html>

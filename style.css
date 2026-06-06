@@ -1,0 +1,168 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --primary: #72614F;
+    --accent-dco: #72614F;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER ÉS NYELVVÁLASZTÓ */
+header {
+    background: linear-gradient(135deg, #72614F 0%, #756351 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative; 
+}
+
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #EFEBE0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+.lang-btn:hover { color: #EFEBE0; }
+.lang-btn.active { color: #EFEBE0; text-decoration: underline; text-underline-offset: 4px; }
+
+.header-container { max-width: 700px; margin: 0 auto; }
+header h1 { margin: 0 0 10px 0; font-size: 2.5rem; font-weight: 300; letter-spacing: -0.05em; color: #EFEBE0; }
+header h2 { margin: 0 0 15px 0; font-size: 1.5rem; color: #EFEBE0; font-weight: 300; }
+header p { color: #EFEBE0; font-size: 1.1rem; }
+
+/* SZŰRŐ GOMBOK */
+.filter-buttons { margin-top: 30px; }
+.btn {
+    background: transparent;
+    border: 2px solid #EFEBE0;
+    color: #EFEBE0;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+.btn:hover, .btn.active {
+    background: #EFEBE0;
+    border-color: #EFEBE0;
+    color: #72614F;
+}
+
+/* KÁRTYÁK ALAP BEÁLLÍTÁSAI */
+.portfolio-grid { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; align-items: center; }
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 30px;
+    width: 100%;
+    max-width: 1100px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.filter-item { display: flex; transition: all 0.3s ease; }
+
+.card-info h3 { margin: 0 0 8px 0; font-size: 1.4rem; }
+.tag {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+}
+.tag.programmatic-tag { background: #d1fae5; color: #065f46; }
+.desc { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+/* AZ EREDETI IFRAME LAYOUT ÉS KICSINYÍTÉS LOGIKA */
+.preview-row, .multi-size-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+.preview-row.preview-row--two {
+    gap: 6px;
+}
+
+.multi-size-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.size-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
+
+/* Itt van a te eredeti preview-box beállításod visszaállítva */
+.preview-box {
+    margin: 2px;
+    border: 1px solid #e5e7eb;
+    background: #f3f4f6;
+    overflow: hidden;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative; /* Ez CSAK azért kell, hogy a transform: scale működjön benne */
+}
+
+/* Az alap iframe-ek viselkedése az eredeti módon */
+.preview-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Speciális szabály: 1200x1200 kicsinyítése 300x300-ra */
+.preview-box-1200 iframe {
+    width: 1200px !important;
+    height: 1200px !important;
+    position: absolute;
+    top: 0; left: 0;
+    transform: scale(0.25);
+    transform-origin: top left;
+}
+
+/* Speciális szabály: 1080x1080 kicsinyítése 300x300-ra (300 / 1080 = 0.2777) */
+.preview-box-1080 iframe {
+    width: 1080px !important;
+    height: 1080px !important;
+    position: absolute;
+    top: 0; left: 0;
+    transform: scale(0.2777);
+    transform-origin: top left;
+}
+
+footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.9rem; }
+footer a { color: var(--primary); text-decoration: none; }

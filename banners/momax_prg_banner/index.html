@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="{{advert_name}}" />
+    <meta
+      name="targeting_audiences_names"
+      content="{{targeting_audiences_names}}"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="300x250.css" />
+    <script src="fontsizer.min.js"></script>
+  </head>
+
+  <!-- TEMPLATE VARIANT CLASS:
+ -> ''
+ -> 'animationFlow'
+ -> 'animationSlice'
+ -> 'animationAppear'
+  -->
+
+  <body>
+<main
+  class="click_url template_variant_class"
+  href="{{click_url}}"
+>
+  <div class="scene_2">
+    <div class="product_image_container">
+      <div class="product_image background_image_1 position_1" style="background: url(Momax_akcio_elso_20szintemindenonline_v1.jpg);"></div>
+    </div>
+    
+    <div class="shadow_overlay_1"></div>
+    
+        <div class="sticker_container">
+      <img
+        class="sticker_image sticker_image_1"
+        src="only_online_products_discout.png"
+        alt="Sticker image"
+      />
+    </div>
+
+    <img class="sticker_image_2" src="Momax_CsakAzOnlineShopban_felirat.png" alt="Info Icon" />
+    
+    <img
+      class="sticker_image_3 sticker_image_2"
+      src="Momax_Mia_akcio_elso_20szintemindenonline.png"
+    ></div>
+
+        <img
+          class="sticker_image_4"
+          src="{{sticker_image_4}}"
+          alt="Sticker image_4"
+        />
+  </div>
+
+    <div class="date_container">
+      <p class="date_text">2026.05.01.</p>
+    </div>
+
+    <div class="logo_container">
+      <img class="logo_image" src="momax_black_logo.png" alt="Logo" />
+    </div>
+
+    <div class="cta_design">
+      <div class="cta_container">
+        <p class="cta_text cta_text_1">MEGNÉZEM</p>
+      </div>
+    </div>
+
+  </main>
+
+    <script type="text/javascript">
+      const bannerMain = document.querySelector(".template_variant_class");
+      const bannerParams = new URLSearchParams(window.location.search);
+      const bannerVariant = bannerParams.get("variant") || "variant_default";
+      const bannerAnimation = bannerParams.get("animation") || "animationSlice";
+
+      if (bannerMain) {
+        bannerMain.classList.add(bannerVariant, bannerAnimation);
+      }
+
+      if (typeof resizer === "function") {
+        resizer(".headline_container_1", {
+          minFontSize: 9,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: true,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".info_text_container", {
+          minFontSize: 8,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: true,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".date_container", {
+          minFontSize: 11,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: false,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".cta_container", {
+          minFontSize: 3,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: false,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+      }
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const main = document.querySelector(".template_variant_class");
+        if (!main) return;
+
+        if (main.classList.contains("animationAppear")) {
+          const scene = main.querySelector(".scene_2");
+
+          if (scene) {
+            scene.style.opacity = "0";
+            scene.style.transform = "scale(0.98)";
+            scene.style.transition = "opacity 700ms ease, transform 700ms ease";
+
+            requestAnimationFrame(() => {
+              scene.style.opacity = "1";
+              scene.style.transform = "scale(1)";
+            });
+          }
+        }
+
+        if (main.classList.contains("animationFlow")) {
+          const logoImage = document.querySelector(".logo_image");
+          const logoContainer = document.querySelector(".logo_container");
+
+          if (logoImage && logoContainer) {
+            function runLogoAnimation() {
+              logoImage.classList.remove("slide-in-right");
+              logoContainer.classList.remove("slide-out-bottom");
+
+              void logoImage.offsetWidth;
+              void logoContainer.offsetWidth;
+
+              logoImage.classList.add("slide-in-right");
+              logoContainer.classList.add("slide-out-bottom");
+            }
+
+            runLogoAnimation();
+            setInterval(runLogoAnimation, 4200);
+          }
+        }
+
+        if (main.classList.contains("animationSlice")) {
+          function startSliceAnimation() {
+            const scene = main.querySelector(".scene_2");
+            if (!scene) return;
+
+            const SLICE_COUNT = 14;
+            const LOOP_COUNT = 5;
+            const STAGGER = 100;
+            const DURATION = 2800;
+            const PAUSE_BETWEEN_LOOPS = 5000;
+
+            const mainRect = main.getBoundingClientRect();
+            const width = Math.round(mainRect.width);
+            const height = Math.round(mainRect.height);
+
+            if (!width || !height) {
+              console.log("Slice animation aborted: main has no size.");
+              return;
+            }
+
+            main.style.position = "relative";
+            main.style.overflow = "hidden";
+
+            const dateEl = main.querySelector(".date_container");
+            const logoEl = main.querySelector(".logo_container");
+            const ctaEl = main.querySelector(".cta_design");
+
+            const overlay = document.createElement("div");
+            overlay.className = "slice-overlay";
+
+            const is300x600 = width === 300 && height === 600;
+            const sliceWidth = width / SLICE_COUNT;
+            const sliceHeight = height / SLICE_COUNT;
+
+            for (let i = 0; i < SLICE_COUNT; i++) {
+              const left = i * sliceWidth;
+              const top = i * sliceHeight;
+              const fromRightIndex = SLICE_COUNT - 1 - i;
+              const fromBottomIndex = SLICE_COUNT - 1 - i;
+
+              const column = document.createElement("div");
+              column.className = "slice-column";
+              if (is300x600) {
+                column.style.left = `0px`;
+                column.style.top = `${top}px`;
+                column.style.width = `${width}px`;
+                column.style.height = `${Math.ceil(sliceHeight)}px`;
+              } else {
+                column.style.left = `${left}px`;
+                column.style.width = `${Math.ceil(sliceWidth)}px`;
+                column.style.height = `${height}px`;
+              }
+
+              const inner = document.createElement("div");
+              inner.className = "slice-inner";
+              if (is300x600) {
+                inner.style.transformOrigin = "center bottom";
+              }
+              const staggerIndex = is300x600 ? fromBottomIndex : fromRightIndex;
+              inner.style.animation = `${
+                is300x600 ? "sliceFlipRow" : "sliceFlipColumn"
+              } ${DURATION}ms ease-in-out ${LOOP_COUNT}`;
+              inner.style.animationDelay = `${staggerIndex * STAGGER}ms`;
+              inner.style.animationFillMode = "both";
+
+              const front = document.createElement("div");
+              front.className = "slice-face slice-front";
+
+              const back = document.createElement("div");
+              back.className = `slice-face slice-back${
+                is300x600 ? " slice-back-row" : ""
+              }`;
+
+              const clone = scene.cloneNode(true);
+              if (dateEl) clone.appendChild(dateEl.cloneNode(true));
+              if (logoEl) clone.appendChild(logoEl.cloneNode(true));
+              if (ctaEl) clone.appendChild(ctaEl.cloneNode(true));
+              clone.classList.add("slice-scene-copy");
+              clone.style.width = `${width}px`;
+              clone.style.height = `${height}px`;
+              if (is300x600) {
+                clone.style.left = `0px`;
+                clone.style.top = `-${top}px`;
+              } else {
+                clone.style.left = `-${left}px`;
+              }
+
+              front.appendChild(clone);
+              inner.appendChild(front);
+              inner.appendChild(back);
+              column.appendChild(inner);
+              overlay.appendChild(column);
+            }
+
+            main.appendChild(overlay);
+            scene.style.visibility = "hidden";
+
+            const fullRuntime =
+              (SLICE_COUNT - 1) * STAGGER +
+              LOOP_COUNT * DURATION +
+              PAUSE_BETWEEN_LOOPS;
+
+            setTimeout(() => {
+              overlay.remove();
+              scene.style.visibility = "visible";
+            }, fullRuntime);
+          }
+
+          document.dispatchEvent(new Event("readystatechange"));
+
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+              setTimeout(startSliceAnimation, 250);
+            });
+          } else {
+            setTimeout(startSliceAnimation, 250);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

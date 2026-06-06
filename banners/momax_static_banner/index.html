@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="{{advert_name}}" />
+    <meta
+      name="targeting_audiences_names"
+      content="{{targeting_audiences_names}}"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="1200x1200.css" />
+    <script src="fontsizer.min.js"></script>
+  </head>
+
+<!-- template_variant_classes
+        white
+        glamour
+-->
+
+  <body>
+<main
+  class="click_url template_variant_class {{template_variant_class}}"
+  href="{{click_url}}"
+>
+  <div class="scene_2">
+    <div class="product_image_container">
+      <div class="product_image background_image_1" style="background: url('momax_akcio_25szintemindenkertibutor_v1_social_big.png');"></div>
+    </div>
+    
+    <div class="shadow_overlay_1"></div>
+    
+        <div class="sticker_container">
+      <img
+        class="sticker_image sticker_image_1"
+        src="momax_akcio_25szintemindenkertibutor_gomb.png"
+        alt="Sticker image"
+      />
+    </div>
+
+    <img class="sticker_image_2" src="Momax_AzAruhazakbanEsOnline_felirat.png" alt="Info Icon" />
+    
+    <img
+      class="sticker_image_3" src="Momax_Mia_akcio_25szintemindenkertibutor_Social.png" alt="Sticker image_3" /
+    ></div>
+
+        <img
+          class="sticker_image_4"
+          src="glamour.png"
+          alt="Sticker image_4"
+        />
+  </div> 
+    
+    <div class="date_container">
+      <p class="date_text">2026.05.18-23.</p>
+    </div>
+
+    <div class="logo_container">
+      <img class="logo_image" src="momax_black_logo.png" alt="Logo" />
+    </div>
+
+    <div class="disclaimer_container">
+      <p class="disclaimer_text">{{disclaimer_text}}</p>
+    </div>
+
+  </main>
+
+    <script type="text/javascript">
+      (function () {
+        function isEmptyDisclaimer(text) {
+          if (!text) return true;
+          const cleaned = text.replace(/\u00a0/g, " ").trim();
+          return (
+            cleaned.length === 0 ||
+            /^\{\{\s*disclaimer_text\s*\}\}$/.test(cleaned)
+          );
+        }
+
+        function applyNoDisclaimerLayout() {
+          const mainEl = document.querySelector("main");
+          const disclaimerContainer = document.querySelector(".disclaimer_container");
+          const disclaimerText = document.querySelector(".disclaimer_text");
+          const dateContainer = document.querySelector(".date_container");
+
+          if (!mainEl || !disclaimerContainer || !disclaimerText || !dateContainer) {
+            return;
+          }
+
+          if (!isEmptyDisclaimer(disclaimerText.textContent)) {
+            mainEl.classList.remove("no_disclaimer");
+            mainEl.style.removeProperty("--disclaimer-empty-shift");
+            disclaimerContainer.style.removeProperty("display");
+            return;
+          }
+
+          mainEl.classList.add("no_disclaimer");
+          disclaimerContainer.style.display = "none";
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", applyNoDisclaimerLayout);
+        } else {
+          applyNoDisclaimerLayout();
+        }
+
+        window.addEventListener("load", applyNoDisclaimerLayout);
+      })();
+
+      if (typeof resizer === "function") {
+        resizer(".headline_container_1", {
+          minFontSize: 9,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: true,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".info_text_container", {
+          minFontSize: 8,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: true,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".date_container", {
+          minFontSize: 11,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: false,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".cta_container", {
+          minFontSize: 3,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: false,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        });
+        resizer(".disclaimer_container", {
+          minFontSize: 6,
+          maxFontSize: 100,
+          checkWidth: true,
+          checkHeight: true,
+          wordWrap: true,
+          resizer: true,
+          timeout: 80,
+          resize: 3,
+          debug: false,
+        }); 
+      }
+
+      (function applyVariantFromQuery() {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          if (!params.has('variant')) return;
+          const raw = params.get('variant') || '';
+          const classes = raw.split(/\s+/).map(c => c.trim()).filter(Boolean);
+          const mainEl = document.querySelector('main');
+          if (!mainEl || classes.length === 0) return;
+          mainEl.classList.remove('white', 'glamour');
+          mainEl.classList.add(...classes);
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+  </body>
+</html>

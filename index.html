@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Banner & DCO Portfólió</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <!-- Nyelvválasztó gombok -->
+        <div class="language-switcher">
+            <button id="btn-hu" class="lang-btn active" onclick="switchLanguage('hu')">HU</button>
+            <span>|</span>
+            <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+        </div>
+
+        <div class="header-container">
+            <h1 class="lang-text" data-hu="Sági Milán" data-en="Milán Sági">Sági Milán</h1>
+            <h2 class="lang-text" data-hu="HTML5 Banner & AdTech Fejlesztő" data-en="HTML5 Banner & AdTech Developer">HTML5 Banner & AdTech Fejlesztő</h2>
+            <p class="lang-text" 
+               data-hu="Interaktív, statikus és programmatic (DCO) hirdetések fejlesztése tiszta HTML5, CSS3 és JavaScript alapokon." 
+               data-en="Developing interactive, static, and programmatic (DCO) ad creatives using pure HTML5, CSS3, and JavaScript.">
+               Interaktív, statikus és programmatic (DCO) hirdetések fejlesztése tiszta HTML5, CSS3 és JavaScript alapokon.
+            </p>
+            
+            <div class="filter-buttons">
+                <button class="btn active lang-text" onclick="filterSelection('all')" data-hu="Összes" data-en="All">Összes</button>
+                <button class="btn lang-text" onclick="filterSelection('static')" data-hu="Statikus bannerek" data-en="Static Banners">Statikus bannerek</button>
+                <button class="btn lang-text" onclick="filterSelection('dco')" data-hu="Programmatic / DCO" data-en="Programmatic / DCO">Programmatic / DCO</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="portfolio-grid">
+
+            <!-- 1. BANNER: STATIKUS -->
+            <div class="card filter-item static">
+                <div class="card-info">
+                    <h3 class="lang-text" data-hu="Premium Social Banner" data-en="Premium Social Banner">Premium Social Banner</h3>
+                    <p class="tag lang-text" data-hu="Statikus HTML5" data-en="Static HTML5">Statikus HTML5</p>
+                    <p class="desc lang-text" 
+                       data-hu="Tisztán CSS3 alapon felépített reszponzív banner, optimalizált asset-méretekkel a gyors betöltésért." 
+                       data-en="Responsive banner built entirely with CSS3, featuring optimized asset sizes for fast loading.">
+                       Tisztán CSS3 alapon felépített reszponzív banner, optimalizált asset-méretekkel a gyors betöltésért.
+                    </p>
+                </div>
+                <div class="preview-row preview-row--two">
+                    <div class="preview-box preview-box-1200" style="width: 300px; height: 300px;">
+                        <iframe src="banners/momax_static_banner/index.html" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="preview-box preview-box-1200" style="width: 300px; height: 300px;">
+                        <iframe src="banners/momax_static_banner/index.html?variant=glamour" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <!-- Az eredeti térközöd visszaállítva -->
+                <div style="height:16px;"></div>
+
+                <div class="preview-row">
+                    <div class="preview-box preview-box-1080" style="width: 300px; height: 300px;">
+                        <iframe src="banners/fizz_static_banner/index.html?variant=" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="preview-box preview-box-1080" style="width: 300px; height: 300px;">
+                        <iframe src="banners/fizz_static_banner/index.html?variant=kupon_freeDelivery" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="preview-box preview-box-1080" style="width: 300px; height: 300px;">
+                        <iframe src="banners/fizz_static_banner/index.html?variant=thm%20freeDelivery" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. BANNER: PROGRAMMATIC / DCO -->
+            <div class="card filter-item dco">
+                <div class="card-info">
+                    <h3 class="lang-text" data-hu="Dynamic Retail Header" data-en="Dynamic Retail Header">Dynamic Retail Header</h3>
+                    <p class="tag programmatic-tag lang-text" data-hu="DCO / Programmatic" data-en="DCO / Programmatic">DCO / Programmatic</p>
+                    <p class="desc lang-text" 
+                       data-hu="Dinamikus banner, amely külső JSON feed alapján valós időben cseréli a termékeket, árakat és CTA-kat a felhasználó lokációja szerint." 
+                       data-en="Dynamic banner updating products, prices, and CTAs in real-time based on the user's location via JSON feed.">
+                       Dinamikus banner, amely külső JSON feed alapján valós időben cseréli a termékeket, árakat és CTA-kat a felhasználó lokációja szerint.
+                    </p>
+                </div>
+                <div class="preview-row">
+                    <div class="preview-box" style="width: 300px; height: 250px;">
+                        <iframe src="banners/momax_prg_banner/index.html?variant=variant_1&animation=animationSlice" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="preview-box" style="width: 300px; height: 250px;">
+                        <iframe src="banners/momax_prg_banner/index.html?variant=variant_2&animation=animationFlow" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="preview-box" style="width: 300px; height: 250px;">
+                        <iframe src="banners/momax_prg_banner/index.html?variant=variant_3&animation=animationAppear" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <div class="preview-row">
+                    <div class="preview-box" style="width: 300px; height: 250px;">
+                        <iframe src="banners/yettel_b2b_prg_banner/index.html" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <div class="card-info">
+                    <h3 class="lang-text" data-hu="Yettel Business Reflex" data-en="Yettel Business Reflex">Yettel Business Reflex</h3>
+                    <p class="tag programmatic-tag lang-text" data-hu="Multi-size Preview" data-en="Multi-size Preview">Multi-size Preview</p>
+                    <p class="desc lang-text" data-hu="Ugyanaz a template több méretben." data-en="The exact same template in multiple sizes.">Ugyanaz a template több méretben.</p>
+                </div>
+
+                <div class="multi-size-grid">
+                    <div class="multi-size-item multi-size-item--160x600">
+                        <span class="size-label">160x600</span>
+                        <div class="preview-box" style="width: 160px; height: 600px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=160x600" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--300x250">
+                        <span class="size-label">300x250</span>
+                        <div class="preview-box" style="width: 300px; height: 250px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=300x250" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--300x600">
+                        <span class="size-label">300x600</span>
+                        <div class="preview-box" style="width: 300px; height: 600px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=300x600" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--320x480">
+                        <span class="size-label">320x480</span>
+                        <div class="preview-box" style="width: 320px; height: 480px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=320x480" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--320x50">
+                        <span class="size-label">320x50</span>
+                        <div class="preview-box" style="width: 320px; height: 50px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=320x50" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--640x360">
+                        <span class="size-label">640x360</span>
+                        <div class="preview-box" style="width: 640px; height: 360px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=640x360" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="multi-size-item multi-size-item--728x90">
+                        <span class="size-label">728x90</span>
+                        <div class="preview-box" style="width: 728px; height: 90px;">
+                            <iframe src="banners/yettel_b2b_prg_banner/index.html?size=728x90" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | <span class="lang-text" data-hu="Elérhetőség:" data-en="Contact:">Elérhetőség:</span> <a href="mailto:info@milanwebdesign.hu">info@milanwebdesign.hu</a> | <a href="https://www.linkedin.com/in/milán-sági-695938348" target="_blank">LinkedIn</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
