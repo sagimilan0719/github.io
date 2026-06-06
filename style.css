@@ -166,3 +166,80 @@ header p { color: #EFEBE0; font-size: 1.1rem; }
 
 footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.9rem; }
 footer a { color: var(--primary); text-decoration: none; }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .preview-row,
+    .multi-size-grid {
+        gap: 8px;
+    }
+
+    .preview-box {
+        max-width: 100%;
+    }
+
+    /* Inline méretek felülírása mobilra */
+    .preview-box[style*="width: 300px; height: 300px;"] {
+        width: min(100%, 300px) !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+    }
+
+    .preview-box[style*="width: 300px; height: 250px;"] {
+        width: min(100%, 300px) !important;
+        height: auto !important;
+        aspect-ratio: 6 / 5;
+    }
+
+    .preview-box[style*="width: 160px; height: 600px;"] {
+        width: min(100%, 160px) !important;
+        height: auto !important;
+        aspect-ratio: 4 / 15;
+    }
+
+    .preview-box[style*="width: 300px; height: 600px;"] {
+        width: min(100%, 300px) !important;
+        height: auto !important;
+        aspect-ratio: 1 / 2;
+    }
+
+    .preview-box[style*="width: 320px; height: 480px;"] {
+        width: min(100%, 320px) !important;
+        height: auto !important;
+        aspect-ratio: 2 / 3;
+    }
+
+    .preview-box[style*="width: 320px; height: 50px;"] {
+        width: min(100%, 320px) !important;
+        height: auto !important;
+        aspect-ratio: 32 / 5;
+    }
+
+    .preview-box[style*="width: 640px; height: 360px;"] {
+        width: min(100%, 640px) !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    .preview-box[style*="width: 728px; height: 90px;"] {
+        width: min(100%, 728px) !important;
+        height: auto !important;
+        aspect-ratio: 364 / 45;
+    }
+
+    /* 1200/1080-as preview-k mobilon ne lógjanak túl */
+    .preview-box-1200 iframe,
+    .preview-box-1080 iframe {
+        width: 100% !important;
+        height: 100% !important;
+        position: static;
+        transform: none;
+    }
+}
