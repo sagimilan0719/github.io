@@ -50,4 +50,51 @@ window.addEventListener('DOMContentLoaded', () => {
     // Megnézzük, volt-e már elmentett nyelv, ha nem, a magyar az alapértelmezett
     const savedLang = localStorage.getItem('portfolioLang') || 'hu';
     switchLanguage(savedLang);
+
+    // --- 4. IFRAME ANIMÁCIÓK INDÍTÁSA GÖRGETÉSRE ---
+    const animatedGroups = document.querySelectorAll('.scroll-animated-group');
+    const deferredIframes = [];
+
+    animatedGroups.forEach(group => {
+        group.querySelectorAll('iframe').forEach(iframe => {
+            const src = iframe.getAttribute('src');
+            if (!src || src === 'about:blank') return;
+
+            iframe.dataset.lazySrc = src;
+            iframe.setAttribute('src', 'about:blank');
+            iframe.setAttribute('loading', 'lazy');
+            deferredIframes.push(iframe);
+        });
+    });
+
+    if (!deferredIframes.length) return;
+
+    const startIframe = (iframe) => {
+        const lazySrc = iframe.dataset.lazySrc;
+        if (!lazySrc) return;
+
+        iframe.setAttribute('src', lazySrc);
+        delete iframe.dataset.lazySrc;
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        deferredIframes.forEach(startIframe);
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const group = entry.target;
+            group.querySelectorAll('iframe').forEach(startIframe);
+            obs.unobserve(group);
+        });
+    }, {
+        root: null,
+        threshold: 0.25,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    animatedGroups.forEach(group => observer.observe(group));
 });
