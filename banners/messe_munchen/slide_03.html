@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="Carousel_13_Dienstleister_EB_Ticket_TR_01" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="1200x1200.css" />
+    <script src="fontsizer.min.js"></script>
+  </head>
+
+  <body>
+    <main class="click_url template_variant_class logo headlineShadow">
+      <div class="scene_2">
+        <div class="background_image_container background_image_container_1">
+          <img class="background_image background_image_1" src="Carousel_13_15Carousal_Ad_Kampagne_Where_V1_03.jpg" alt="Background Image" />
+        </div>
+        <div class="shadow_layer"></div>
+        <div class="headline_container_1 resizer_container">
+          <p class="headline_text_1">Değerli bağlantılar.</p>
+          <div class="headline_shadow_layer" style="opacity: 0.25;"></div>
+        </div>
+        <div class="subheadline_container_1 resizer_container">
+          <p class="subheadline_text_1"></p>
+        </div>
+        <div class="cta_design">
+          <div class="cta_container">
+            <p class="cta_text cta_text_1"></p>
+          </div>
+        </div>
+        <div class="sticker_image_1_container">
+          <img class="sticker_image_1" src="" alt="Sticker" />
+        </div>
+        <div class="logo_container">
+          <div class="logo_shadow_layer"></div>
+          <img class="logo_image" src="exporeal_logo.svg" alt="Logo" />
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      function hideEmptyContainers() {
+        const containers = [
+          { selector: '.headline_container_1', textSelector: '.headline_text_1' },
+          { selector: '.subheadline_container_1', textSelector: '.subheadline_text_1' },
+          { selector: '.cta_design', textSelector: '.cta_text' }
+        ];
+        containers.forEach(item => {
+          const container = document.querySelector(item.selector);
+          const textElement = document.querySelector(item.textSelector);
+          if (container && textElement && !textElement.textContent.trim()) {
+            container.style.display = 'none';
+          }
+        });
+      }
+      document.addEventListener('DOMContentLoaded', hideEmptyContainers);
+      hideEmptyContainers();
+
+      (function toggleStickerImage1() {
+        const stickerContainer = document.querySelector(".sticker_image_1_container");
+        const stickerImage = document.querySelector(".sticker_image_1");
+        if (!stickerContainer || !stickerImage) return;
+        const attrSrc = (stickerImage.getAttribute("src") || "").trim();
+        if (!attrSrc) { stickerContainer.style.display = "none"; return; }
+        stickerContainer.style.display = "block";
+        stickerImage.addEventListener("error", function () { stickerContainer.style.display = "none"; }, { once: true });
+      })();
+
+      (function toggleBrandImage1Logo() {
+        const logoContainer = document.querySelector(".logo_container");
+        const logoImage = document.querySelector(".logo_image");
+        if (!logoContainer || !logoImage) return;
+        const attrSrc = (logoImage.getAttribute("src") || "").trim();
+        if (!attrSrc) { logoContainer.style.display = "none"; return; }
+        logoContainer.style.display = "flex";
+        logoImage.addEventListener("error", function () { logoContainer.style.display = "none"; }, { once: true });
+      })();
+
+      resizer(".subheadline_container_1", { minFontSize: 9, maxFontSize: 1000, checkWidth: true, checkHeight: true, wordWrap: true, resizer: true, timeout: 80, resize: 3, debug: false });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="{{advert_name}}" />
+    <meta
+      name="targeting_audiences_names"
+      content="{{targeting_audiences_names}}"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="[[css]]" />
+    <script src="fontsizer.min.js"></script>
+  </head>
+
+  <!-- TEMPLATE VARIANT CLASS:
+  -> 'cta' - cta will be shown
+     'up' - headline container moves to top 1200x1200
+     'top' - headline container moves to top 1440x1440
+     'bottom' - headline container moves to bottom
+      'headlineShadow' - headline shadow layer will be shown
+      'logoShadow' - logo shadow layer will be shown
+  -->
+
+  <body>
+    <main
+      class="click_url template_variant_class {{template_variant_class}}"
+      href="{{click_url}}"
+    >
+      <div class="scene_2">
+        <div class="background_image_container background_image_container_1">
+          <img
+            class="background_image background_image_1"
+            src="{{background_image_1}}"
+            alt="Background Image"
+          />
+        </div>
+        <div class="shadow_layer"></div>
+        <div class="headline_container_1 resizer_container">
+          <p class="headline_text_1" style="font-size: {{headline_style_1}};">{{headline_text_1}}</p>
+          <div
+            class="headline_shadow_layer"
+            style="opacity: {{shadow_style_1}};"
+          ></div>
+        </div>
+        <div class="subheadline_container_1 resizer_container">
+          <p class="subheadline_text_1">{{subheadline_text_1}}</p>
+        </div>
+
+        <div class="cta_design">
+          <div class="cta_container">
+            <p class="cta_text cta_text_1" style="font-size: {{cta_style_1}};">{{cta_text_1}}</p>
+          </div>
+        </div>
+
+        <div class="sticker_image_1_container">
+          <img
+            class="sticker_image_1"
+            src="{{sticker_image_1}}"
+            alt="Sticker"
+          />
+        </div>
+
+        <div class="logo_container">
+          <div
+            class="logo_shadow_layer"
+            style="opacity: {{shadow_style_2}};"
+          ></div>
+          <img class="logo_image" src="{{brand_image_1}}" alt="Logo" />
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      // Hide empty containers
+      function hideEmptyContainers() {
+        const containers = [
+          { selector: '.headline_container_1', textSelector: '.headline_text_1' },
+          { selector: '.subheadline_container_1', textSelector: '.subheadline_text_1' },
+          { selector: '.cta_design', textSelector: '.cta_text' }
+        ];
+        
+        containers.forEach(item => {
+          const container = document.querySelector(item.selector);
+          const textElement = document.querySelector(item.textSelector);
+          if (container && textElement && !textElement.textContent.trim()) {
+            container.style.display = 'none';
+          }
+        });
+      }
+      
+      // Run on page load
+      document.addEventListener('DOMContentLoaded', hideEmptyContainers);
+      hideEmptyContainers();
+
+      (function toggleStickerImage1() {
+        const stickerContainer = document.querySelector(".sticker_image_1_container");
+        const stickerImage = document.querySelector(".sticker_image_1");
+        if (!stickerContainer || !stickerImage) return;
+
+        const dataSrc = (stickerImage.getAttribute("data-src") || "").trim();
+        const attrSrc = (stickerImage.getAttribute("src") || "").trim();
+        const isUnresolvedPlaceholder = (value) => /\{\{\s*sticker_image_1\s*\}\}/.test(value);
+
+        const stickerSrc = [dataSrc, attrSrc].find(
+          (value) => value && !isUnresolvedPlaceholder(value)
+        );
+
+        if (!stickerSrc) {
+          stickerContainer.style.display = "none";
+          stickerImage.setAttribute("src", "");
+          return;
+        }
+
+        stickerContainer.style.display = "block";
+
+        if (attrSrc !== stickerSrc) {
+          stickerImage.setAttribute("src", stickerSrc);
+        }
+
+        stickerImage.addEventListener(
+          "error",
+          function () {
+            stickerContainer.style.display = "none";
+          },
+          { once: true }
+        );
+      })();
+
+      (function toggleBrandImage1Logo() {
+        const logoContainer = document.querySelector(".logo_container");
+        const logoImage = document.querySelector(".logo_image");
+        if (!logoContainer || !logoImage) return;
+
+        const dataSrc = (logoImage.getAttribute("data-src") || "").trim();
+        const attrSrc = (logoImage.getAttribute("src") || "").trim();
+        const isUnresolvedPlaceholder = (value) => /\{\{\s*brand_image_1\s*\}\}/.test(value);
+
+        const logoSrc = [dataSrc, attrSrc].find(
+          (value) => value && !isUnresolvedPlaceholder(value)
+        );
+
+        if (!logoSrc) {
+          logoContainer.style.display = "none";
+          logoImage.setAttribute("src", "");
+          return;
+        }
+
+        logoContainer.style.display = "flex";
+
+        if (attrSrc !== logoSrc) {
+          logoImage.setAttribute("src", logoSrc);
+        }
+
+        logoImage.addEventListener(
+          "error",
+          function () {
+            logoContainer.style.display = "none";
+          },
+          { once: true }
+        );
+      })();
+      
+      resizer(".subheadline_container_1", {
+        minFontSize: 9,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+
+      
+    </script>
+  </body>
+</html>

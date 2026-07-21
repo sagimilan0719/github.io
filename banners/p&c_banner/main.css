@@ -1,0 +1,247 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+  overflow: hidden;
+  font-family: "MemoryScriptNordVariableVF.ttf", sans-serif;
+}
+
+:root {
+  --primary-color: #141946;
+  --secondary-color: #e2001a;
+  --light-color: #fff;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+.d-none {
+  display: none;
+}
+
+@font-face {
+  font-family: MemoryScriptNord-Bold;
+  src: url(MemoryScriptNord-Bold.otf);
+}
+
+@font-face {
+  font-family: MemoryScriptNord-Medium;
+  src: url(MemoryScriptNord-Medium.otf);
+}
+
+@font-face {
+  font-family: MemoryScriptNormal-Light;
+  src: url(MemoryScriptNormal-Light.otf);
+}
+
+h1,
+p {
+  margin: 0 !important;
+}
+
+.background_image_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.background_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat !important;
+}
+
+.background_image_3 {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.shadow_layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0rem;
+    left: 0;
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.0) 100%);
+}
+
+
+.logo_container {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.logo_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sticker_image_1_container,
+.sticker_image_2_container {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: none;
+  z-index: 3;
+}
+
+.sticker_image_1,
+.sticker_image_2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scene_2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.product_image_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.product_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.resizer_container,
+.cta_design {
+  position: absolute;
+  border: 1px solid transparent;
+  color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.headline_container_1 {
+  font-weight: 600;
+  text-align: center;
+  font-family: MemoryScriptNord-Bold;
+}
+
+.headline_text_1,
+.subheadline_text_1,
+.subheadline_text_2,
+.date_text,
+.cta_text {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.32);
+}
+
+.subheadline_container_1 {
+  font-weight: 400;
+  text-align: center;
+  font-family: MemoryScriptNormal-Light;
+}
+
+.subheadline_container_2 {
+  font-weight: 400;
+  text-align: center;
+  font-family: MemoryScriptNormal-Light;
+}
+
+.date_container {
+  font-weight: 400;
+  text-align: center;
+  font-family: MemoryScriptNormal-Light;
+}
+
+.date_text {
+  font-family: MemoryScriptNormal-Light;
+}
+
+.cta_design {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  position: absolute;
+  width: max-content;
+  display: none;
+}
+
+.cta_container {
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* variant class 'final' START */
+
+.final .background_image_container_1,
+.final .background_image_container_3,
+.final .shadow_layer {
+  display: none;
+}
+
+/* variant class 'final' END*/
+
+
+/* variant class 'cta' START */
+.cta .cta_container,
+.cta .cta_design {
+    display: block;
+}
+
+.logo .logo_container {
+    display: block;
+} 
+
+/* variant class 'simple' START */
+.simple .shadow_layer,
+.simple .headline_container_1,
+.simple .subheadline_container_1,
+.simple .subheadline_container_2,
+.simple .date_container,
+.simple .cta_design,
+.simple .logo_container {
+  display: none !important;
+}
+
+.blue .background_image {
+    display: none;
+    background-color: 001d3d;
+}
+
+.blue .shadow_layer {
+    display: none;
+}
+
+/* variant class 'simple' END */
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aldi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="product" />
+    <link rel="stylesheet" type="text/css" href="300x250.css" />
+  </head>
+
+  <style>
+    @font-face {
+      font-family: Aldi-black;
+      src: url("ALDI SUED OT Black.woff2");
+    }
+
+    @font-face {
+      font-family: Aldi-bold;
+      src: url("ALDI SUED OT Bold.woff2");
+    }
+
+    @font-face {
+      font-family: Aldi-condensed;
+      src: url("ALDI SUED OT Cn.woff2");
+    }
+
+    @font-face {
+      font-family: Aldi-light;
+      src: url("ALDI SUED OT Light.woff2");
+    }
+
+    @font-face {
+      font-family: Aldi-regular;
+      src: url("ALDI SUED OT Regular.woff2");
+    }
+
+    @font-face {
+      font-family: KG;
+      src: url("KGTenThousandReasons.woff2");
+    }
+  </style>
+
+  <body>
+    <main>
+      <div class="flex-container">
+        <div class="frame" style="background-image: url('300x250_frame.png')"></div>
+        <div class="frame_3" style="background-image: url('300x250_frame3.png')"></div>
+        <div class="frame_4" style="background-image: url('300x250_frame4.png')"></div>
+        <div class="headline_sticker" style="background-image: url('alacsony_arak_magas_minoseg.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+        <div
+          class="embleme brand_image_1"
+          style="background-image: url('logo_2.svg');"
+        ></div>
+        <div class="subheadline"><span class="subheadline_inner">Érvényes: <b>07.20.</b> hétfőtől <b>07.22.</b> szerdáig.</span></div>
+
+        <!-- Slide 1 -->
+        <div class="slide_1 slide_class_1 slide1 click_url_1">
+          <div class="product_container">
+            <div class="badge_container">
+               <!--  <div
+                class="badge_1 sticker_image_1"
+                style="background-image: url('{{sticker_image_1}}');"
+              ></div> -->
+              <div class="brand_name_1">POWERADE</div>
+              <div class="product_name product_name_1">Izotóniás sportital</div>
+              <div class="product_description_1">0,5 l/palack<br/>698 Ft/l</div>
+            </div>
+            <div
+              class="product_image product_image_1 product_url_1"
+              style="background-image: url('https://dm.emea.cms.aldi.cx/is/image/aldiprodeu/KW29_02_akcio_hetfotol_22');";
+            ></div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide_2 slide_class_2  slide_2_stop click_url_2" style="background-image: url('300x250_frame.png');">
+          <div class="product_container_2">
+            <div class="badge_container_2">
+              <!-- <div
+                class="badge_2 sticker_image_2"
+                style="background-image: url('{{sticker_image_2}}');"
+              ></div> -->
+              <div class="brand_name_2">FRISS 0,0 %</div>
+              <div class="product_name product_name_2">Ízesített alkoholmentes malátaital</div>
+              <div class="product_description_2">0,5 l/doboz<br/>598 Ft/l</div>
+            </div>
+            <div
+              class="product_image product_image_2 product_url_2"
+              style="background-image: url('https://dm.emea.cms.aldi.cx/is/image/aldiprodeu/KW29_02_akcio_hetfotol_23');"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide_3 slide_class_3  slide_3_continue click_url_3">
+        </div>
+        
+         <!-- Slide 4 -->
+        <div class="slide_4 slide_class_4  slide_4_plus click_url_4">
+
+        </div>
+        
+      </div>
+    </main>
+
+    <script>
+      window.onload = function () {
+        var productNames = document.querySelectorAll(".product_name");
+        productNames.forEach(function (element) {
+          if (element.innerText.length > 30) {
+            element.style.fontSize =
+              parseInt(window.getComputedStyle(element).fontSize) - 2 + "px";
+          }
+
+          if (element.innerText.length > 100) {
+            console.log("Extra long text", element.innerText);
+            element.style.fontSize =
+              parseInt(window.getComputedStyle(element).fontSize) - 2 + "px";
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+html {
+  width: 1200px;
+  height: 628px;
+  font-size: 16px;
+}
+
+.logo_container {
+    bottom: 10rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 46rem;
+    height: 7rem;
+    display: none;
+}
+
+.headline_container_1 {
+    width: 31rem;
+    height: 10rem;
+    top: 2.5rem;
+    left: 4rem;
+    /* right: 0; */
+    /* margin: auto; */
+    font-size: 5.3rem;
+    line-height: 0.9;
+}
+
+.sticker_image_1_container {
+    left: 4rem;
+    /* transform: translateX(-50%); */
+    bottom: 50% !important;
+    width: 30.6rem !important;
+    height: 13rem !important;
+    display: none;
+    z-index: 3 !important;
+    transform: translateY(50%);
+}
+
+.sticker_image_2_container {
+    position: absolute;
+    left: 2rem;
+    top: 24.4rem !important;
+    height: 12rem !important;
+    width: 12rem !important;
+    display: none;
+    z-index: 3 !important;
+    display: none !important;
+}
+
+.subheadline_container_1 {
+    width: 30.5rem;
+    height: 4rem;
+    top: 26.45rem;
+    left: 4rem;
+    /* right: 0; */
+    /* margin: auto; */
+}
+
+.subheadline_container_2 {
+    width: 30.5rem;
+    height: 2.4rem;
+    top: 30.6rem;
+    left: 4rem;
+    /* right: 0px; */
+    /* margin: auto; */
+}
+
+.date_container {
+width: 32.3rem;
+    height: 3rem;
+    top: 33.75rem;
+    left: 3.4rem;
+    /* right: 0; */
+    /* margin: auto; */
+}
+
+.cta_design {
+  top: 37.5rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1.25rem 7rem;
+}
+
+.cta_container {
+  height: 2.5rem;
+  width: 12rem;
+}
+
+/* variant class 'final' START */
+
+.final .headline_container_1 {
+  top: 7.5rem;
+  width: 33rem;
+}
+
+.final .logo_container {
+  bottom: 22.5rem;
+  width: 15rem;
+  height: 12rem;
+}
+
+.final .cta_design {
+  top: 41rem;
+}
+
+.center .headline_container_1 {
+    width: 40rem;
+    height: 8rem;
+    top: 24rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.shadow_layer {
+    width: 50% !important;
+    height: 100% !important;
+    top: 0rem !important;
+    position: absolute;
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+.logo .logo_container {
+    display: none !important;
+}
+
+.blue.logo .logo_container {
+    bottom: 11rem !important;
+    right: -36rem !important;
+    width: 26rem !important;
+    height: 7rem !important;
+    display: block !important;
+    position: absolute !important;
+}
+/* variant class 'final' END*/
+

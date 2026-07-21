@@ -1,0 +1,84 @@
+html {
+  width: 1200px;
+  height: 628px;
+  font-size: 14px;
+}
+
+.background_image_1 {
+  object-position: top center !important;
+}
+
+
+.logo_container {
+  bottom: 3rem;
+  right: 3rem;
+  width: 9rem;
+  height: 7rem;
+}
+
+.headline_container_1 {
+  width: 60rem;
+  height: 5rem;
+  bottom: 13rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.subheadline_container_1 {
+  width: 50rem;
+  height: 2.5rem;
+  bottom: 9.5rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cta_design {
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1.25rem 7rem;
+}
+
+.cta_container {
+  height: 2.5rem;
+  width: 12rem;
+}
+
+.shadow_layer {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.35) 80%,
+    rgba(0, 0, 0, 0.7) 100%
+  ) !important;
+}
+
+/* variant class 'final' START */
+
+.final .headline_container_1 {
+  top: 5rem;
+  bottom: unset;
+}
+
+.final .subheadline_container_1 {
+  bottom: 14rem;
+}
+
+.final .logo_container {
+  bottom: 20rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 15rem;
+  height: 12rem;
+}
+
+.final .cta_design {
+    bottom: 5rem;
+}
+
+/* variant class 'final' END*/
+

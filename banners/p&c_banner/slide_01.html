@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="advert_name" content="Juli-Kampagne" />
+    <meta
+      name="targeting_audiences_names"
+      content="Düsseldorf"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="1200x1200.css" />
+    <script src="fontsizer.min.js"></script>
+  </head>
+
+  <!-- TEMPLATE VARIANT CLASS:
+  -> 'cta' - cta will be shown
+     'top' - headline container moves to top
+     'logo' - logo will be shown
+     'bottom' - headline container moves to bottom
+      'simple' - only background is visible
+      'dark' - uses black logo instead of white
+      'blue' - background will be 001d3d 
+  -->
+
+  <body>
+    <main
+      class="click_url template_variant_class logo"
+      href=""
+    >
+      <div class="scene_2">
+        <div class="background_image_container background_image_container_1">
+          <div class="background_image background_image_1 position_1" style="background: url(sRGB_4K_2026-1-00103_HIGHSUMMER_DOB_008-1952_online.jpg); background-size: cover; background-position: top; background-size: 145%; background-position-x: -540px; background-position-y: -502px;"></div>
+        </div>
+        <div class="shadow_layer"></div>
+        <div class="headline_container_1 resizer_container">
+          <p class="headline_text_1 headline_style_1"
+          style=""
+            >ON TOP AUF SALE</p>
+        </div>
+        <div class="subheadline_container_1 resizer_container">
+          <p class="subheadline_text_1">ab 99€ Sale-Einkafswert*</p>
+        </div>
+        <div class="subheadline_container_2 resizer_container">
+          <p class="subheadline_text_2">Nur für INSIDER und alle, die es werden!</p>
+        </div>
+        <div class="date_container resizer_container">
+          <p class="date_text">Bis zum 13.07.2026</p>
+        </div>
+
+        <div class="cta_design">
+          <div class="cta_container">
+            <p class="cta_text cta_text_1"></p>
+          </div>
+        </div>
+
+        <div class="sticker_image_1_container">
+          <img
+            class="sticker_image_1"
+            src="discount_badge.png"
+            alt="AI logo"
+          />
+        </div>
+
+        <div class="sticker_image_2_container">
+          <img
+            class="sticker_image_2"
+            src="in_store_only.png"
+            alt="AI logo 2"
+          />
+        </div>
+
+        <div class="logo_container">
+          <img class="logo_image" src="pc_logo_white.png" alt="Logo" />
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      // Hide empty containers
+      function hideEmptyContainers() {
+        const containers = [
+          { selector: '.headline_container_1', textSelector: '.headline_text_1' },
+          { selector: '.subheadline_container_1', textSelector: '.subheadline_text_1' },
+          { selector: '.subheadline_container_2', textSelector: '.subheadline_text_2' },
+          { selector: '.date_container', textSelector: '.date_text' },
+          { selector: '.cta_design', textSelector: '.cta_text' }
+        ];
+        
+        containers.forEach(item => {
+          const container = document.querySelector(item.selector);
+          const textElement = document.querySelector(item.textSelector);
+          if (container && textElement && !textElement.textContent.trim()) {
+            container.style.display = 'none';
+          }
+        });
+      }
+      
+      // Run on page load
+      document.addEventListener('DOMContentLoaded', hideEmptyContainers);
+      hideEmptyContainers();
+
+      // Switch logo based on 'dark' variant class
+      (function switchLogoForDarkVariant() {
+        const main = document.querySelector('main');
+        const logoImage = document.querySelector('.logo_image');
+        if (main && logoImage && main.classList.contains('dark')) {
+          logoImage.setAttribute('src', 'pc_logo_black.png');
+        }
+      })();
+
+      // Fit each headline line to equal width when 'fitlines' variant class is used
+      // Usage: enter headline text with <br> between lines, e.g. "ON TOP<br>AUF SALE"
+      (function fitHeadlineLines() {
+        const main = document.querySelector('main');
+        if (!main || !main.classList.contains('fitlines')) return;
+
+        const container = document.querySelector('.headline_container_1');
+        const textEl = document.querySelector('.headline_text_1');
+        if (!container || !textEl) return;
+
+        // Split by <br> tags
+        const html = textEl.innerHTML;
+        const parts = html.split(/<br\s*\/?>/i).map(s => s.trim()).filter(s => s);
+        if (parts.length < 2) return;
+
+        // Hide original, measure container width
+        textEl.style.visibility = 'hidden';
+        const containerWidth = container.offsetWidth;
+
+        // Build line spans
+        textEl.innerHTML = parts.map(p =>
+          `<span class="fit-line" style="display:block; white-space:nowrap; line-height:1;">${p}</span>`
+        ).join('');
+        textEl.style.visibility = 'visible';
+
+        const spans = textEl.querySelectorAll('.fit-line');
+        // Find the widest natural span to use as the base font-size reference
+        let maxWidth = 0;
+        spans.forEach(span => { maxWidth = Math.max(maxWidth, span.offsetWidth); });
+
+        // Scale each span so it fills containerWidth
+        spans.forEach(span => {
+          const ratio = containerWidth / span.offsetWidth;
+          const currentFs = parseFloat(getComputedStyle(span).fontSize);
+          span.style.fontSize = (currentFs * ratio) + 'px';
+        });
+      })();
+      
+      resizer(".headline_container_1", {
+        minFontSize: 3,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+      resizer(".subheadline_container_1", {
+        minFontSize: 9,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+      resizer(".subheadline_container_2", {
+        minFontSize: 9,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+      resizer(".date_container", {
+        minFontSize: 9,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+      resizer(".cta_container", {
+        minFontSize: 9,
+        maxFontSize: 1000,
+        checkWidth: true,
+        checkHeight: true,
+        wordWrap: true,
+        resizer: true,
+        timeout: 80,
+        resize: 3,
+        debug: false,
+      });
+
+      (function toggleStickerImage1() {
+        const stickerContainer = document.querySelector(".sticker_image_1_container");
+        const stickerImage = document.querySelector(".sticker_image_1");
+        if (!stickerContainer || !stickerImage) return;
+
+        const dataSrc = (stickerImage.getAttribute("data-src") || "").trim();
+        const attrSrc = (stickerImage.getAttribute("src") || "").trim();
+        const isUnresolvedPlaceholder = (value) => /\{\{\s*sticker_image_1\s*\}\}/.test(value);
+
+        const stickerSrc = [dataSrc, attrSrc].find(
+          (value) => value && !isUnresolvedPlaceholder(value)
+        );
+
+        if (!stickerSrc) {
+          stickerContainer.style.display = "none";
+          stickerImage.setAttribute("src", "");
+          return;
+        }
+
+        stickerContainer.style.display = "block";
+
+        if (attrSrc !== stickerSrc) {
+          stickerImage.setAttribute("src", stickerSrc);
+        }
+
+        stickerImage.addEventListener(
+          "error",
+          function () {
+            stickerContainer.style.display = "none";
+          },
+          { once: true }
+        );
+      })();
+
+      (function toggleStickerImage2() {
+        const stickerContainer = document.querySelector(".sticker_image_2_container");
+        const stickerImage = document.querySelector(".sticker_image_2");
+        if (!stickerContainer || !stickerImage) return;
+
+        const dataSrc = (stickerImage.getAttribute("data-src") || "").trim();
+        const attrSrc = (stickerImage.getAttribute("src") || "").trim();
+        const isUnresolvedPlaceholder = (value) => /\{\{\s*sticker_image_2\s*\}\}/.test(value);
+
+        const stickerSrc = [dataSrc, attrSrc].find(
+          (value) => value && !isUnresolvedPlaceholder(value)
+        );
+
+        if (!stickerSrc) {
+          stickerContainer.style.display = "none";
+          stickerImage.setAttribute("src", "");
+          return;
+        }
+
+        stickerContainer.style.display = "block";
+
+        if (attrSrc !== stickerSrc) {
+          stickerImage.setAttribute("src", stickerSrc);
+        }
+
+        stickerImage.addEventListener(
+          "error",
+          function () {
+            stickerContainer.style.display = "none";
+          },
+          { once: true }
+        );
+      })();
+      
+    </script>
+  </body>
+</html>

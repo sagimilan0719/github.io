@@ -1,0 +1,66 @@
+html {
+  width: 960px;
+  height: 1200px;
+  font-size: 20px;
+}
+
+.logo_container {
+  bottom: 3rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 9rem;
+  height: 7rem;
+}
+
+.headline_container_1 {
+  width: 80%;
+  height: 8rem;
+  bottom: 23rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.subheadline_container_1 {
+  width: 70%;
+  height: 2.5rem;
+  bottom: 19rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cta_design {
+  bottom: 12rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1.25rem 7rem;
+}
+
+.cta_container {
+  height: 2.5rem;
+  width: 12rem;
+}
+
+/* variant class 'final' START */
+
+.final .headline_container_1 {
+  top: 10rem;
+  bottom: unset;
+  width: 33rem;
+}
+
+.final .logo_container {
+  bottom: 25rem;
+  width: 15rem;
+  height: 12rem;
+}
+
+.final .cta_design {
+  bottom: 10rem;
+}
+
+/* variant class 'final' END*/
+

@@ -1,0 +1,852 @@
+@keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes fadeInSlideDownRightCorner {
+     from {
+         opacity: 0;
+         top: -100px;
+         right: -100px;
+     }
+
+     to {
+         opacity: 1;
+         top: 23px;
+         right: 28px;
+     }
+ }
+
+ @keyframes fadeInSlideDownLeftCorner {
+     from {
+         opacity: 0;
+         top: -100px;
+         left: -100px;
+     }
+
+     to {
+         opacity: 1;
+         top: 0px;
+         left: 0px;
+     }
+ }
+
+ @keyframes fadeInSlideDown {
+     from {
+         opacity: 0;
+         top: -100px;
+     }
+
+     to {
+         opacity: 1;
+         top: 20px;
+     }
+ }
+
+ @keyframes fadeInUp {
+     from {
+         transform: translate3d(0, 40px, 0)
+     }
+
+     to {
+         transform: translate3d(0, 0, 0);
+         opacity: 1
+     }
+ }
+
+ @keyframes rotateInDownLeft {
+     0% {
+         transform-origin: left bottom;
+         transform: rotate(-90deg);
+         opacity: 0;
+     }
+
+     100% {
+         transform-origin: left bottom;
+         transform: rotate(0);
+         opacity: 1;
+     }
+ }
+
+ @keyframes zoomeffect {
+     0% {
+         background-position: center;
+         transform: scale(1, 1);
+     }
+
+     50% {
+         background-position: center;
+         transform: scale(1.2, 1.2);
+     }
+
+     100% {
+         background-position: center;
+         transform: scale(1, 1);
+     }
+ }
+
+ @keyframes zoomeffect_arrow {
+     0% {
+         background-position: center;
+         transform: scale(1, 1);
+     }
+
+     50% {
+         background-position: center;
+         transform: scale(1.2, 1.2);
+     }
+
+     100% {
+         background-position: center;
+         transform: scale(1, 1);
+     }
+ }
+
+ @keyframes zoomeffect_arrow_text {
+     0% {
+         background-position: center;
+         transform: translateX(-50%) scale(1, 1);
+     }
+
+     50% {
+         background-position: center;
+         transform: translateX(-50%) scale(1.2, 1.2);
+     }
+
+     100% {
+         background-position: center;
+         transform: translateX(-50%) scale(1, 1);
+     }
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes fadeInDown {
+     0% {
+         opacity: 0;
+         transform: translateY(-100px);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes fadeOut {
+     from {
+         opacity: 1;
+     }
+
+     to {
+         opacity: 0;
+     }
+ }
+
+ @keyframes subheadlineFadeInUp {
+     from {
+         transform: translateX(-50%) translateY(40px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateX(-50%) translateY(0);
+         opacity: 1;
+     }
+ }
+
+ @keyframes subheadlinePulse {
+     0% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.05);
+     }
+
+     100% {
+         transform: scale(1);
+     }
+ }
+
+ html,
+ body {
+     width: 970px;
+     height: 250px;
+     overflow: hidden;
+     background-color: #00005F !important;
+ }
+
+ main {
+     text-decoration: none;
+     display: block;
+     height: 100%;
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .flex-container {
+     width: 970px;
+     height: 250px;
+     position: absolute;
+     overflow: hidden;
+     background-color: #00005F !important;
+ }
+
+ .frame {
+     display: none;
+ }
+
+ .frame_2 {
+     display: none;
+ }
+
+ .frame_3 {
+     display: none;
+ }
+
+ .frame_4 {
+     width: 970px;
+     height: 250px;
+     position: absolute;
+     display: none;
+ }
+
+.headline_sticker {
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    left: 62%;
+    top: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fadeIn 0.6s both ease-in 0.4s, fadeOut 0.2s 9.8s ease-out forwards, fadeIn 0.6s 15.9s ease-in forwards;
+    z-index: 5;
+}
+
+.price_badge {
+    top: -14px;
+    position: relative;
+}
+
+
+ .percentage_container {
+     position: absolute;
+ }
+
+ .percentage_bg {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 0;
+    animation: rotateInDownLeft 1s .5s ease-in both;
+    left: 570px;
+ }
+
+ .percentage {
+    width: 30px;
+    height: 25px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 23px;
+    left: 587px;
+    opacity: 0;
+    animation: fadeIn .2s .2s ease-in forwards, zoomeffect 2s 1;
+    animation-delay: 1.5s;
+ }
+
+ .headline_image {
+     display: none;
+ }
+
+ .headline_image_br_2 {
+    width: 250px;
+    height: 180px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 25px;
+    left: 640px;
+     opacity: 0;
+     animation: fadeIn .2s .2s ease-in forwards;
+ }
+
+ .embleme {
+     width: 78px;
+         height: 63px;
+     position: absolute;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+     opacity: 0;
+    animation: fadeInSlideDownRightCorner 1.5s .2s ease-in forwards, fadeOut 0.2s 9.8s ease-out forwards, fadeInSlideDownRightCorner 1s 15.7s ease-in forwards;
+     top: 10px;
+     right: 15px;
+     z-index: 5;
+ }
+
+ 
+.subheadline {
+    position: absolute;
+    left: 760px;
+    transform: translateX(-50%);
+    bottom: 26px;
+    font-family: 'Aldi-light';
+    font-size: 16px;
+    color: #fff;
+    opacity: 0;
+    animation: subheadlineFadeInUp 1.5s 0.2s ease-in both, fadeOut 0.2s 9.8s ease-out forwards, subheadlineFadeInUp 0.7s 15.7s ease-in forwards;
+    text-align: center;
+    z-index: 5;
+    white-space: nowrap
+}
+
+ .subheadline_inner {
+    display: block;
+    width: fit-content;
+    padding: 2px 12px 0 12px;
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    border-radius: 10px;
+    transform-origin: center center;
+    animation: subheadlinePulse 1.4s 2s ease-in-out infinite;
+}
+
+ .slide_1 {
+     width: 970px;
+     height: 250px;
+     background-image: url('970x250_frame.png');
+     background-size: cover;
+     background-repeat: no-repeat;
+     opacity: 1;
+ }
+
+ .slide_class_1,
+ .slide_1 {
+     opacity: 1;
+ }
+
+ .slide_class_2 {
+     position: relative;
+     top: -250px;
+ }
+
+ .slide_class_3 {
+     position: relative;
+     top: -500px;
+ }
+
+ .slide_class_4 {
+     position: relative;
+     top: -750px;
+ }
+
+ .product_container {
+     opacity: 0;
+     animation: fadeIn .5s 1s ease-in forwards;
+ }
+
+ .product_container_2 {
+     opacity: 0;
+     animation: fadeIn 0.7s 5s ease-in forwards;
+ }
+
+ .badge_container {
+    width: 530px;
+    height: 200px;
+    padding-top: 10px;
+    padding-left: 10px;
+    position: absolute;
+    top: 24px;
+    left: 38px;
+    background-color: white;
+    border-radius: 4px;
+    animation: fadeOut 0.7s 5s ease-out forwards;
+}
+
+ .badge_1 {
+     width: 50px;
+     height: 50px;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+ }
+ 
+ .brand_name_1 {
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  line-height: 15px;
+  /*position: absolute;*/
+     font-family: 'Aldi-bold';
+     font-size: 15px;
+     /*top: 100px;
+    left: 12px;*/
+     max-width: 150px;
+}
+
+ .product_name_1 {
+     /*position: absolute;*/
+     font-family: 'Aldi-bold';
+     font-size: 15px;
+     /*top: 100px;
+    left: 12px;*/
+     max-width: 150px;
+ }
+
+ .product_description_1 {
+     /*position: absolute;*/
+     font-family: 'Aldi-regular';
+     font-size: 10px;
+     /*top: 115px;
+    left: 12px;*/
+    max-width: 150px;
+ }
+
+ .product_image {
+    /*  width: 220px;
+     height: 155px;
+     position: absolute;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+     top: 65px;
+     left: 145px;
+     border: 1px solid blue;
+     */
+     
+        width: 365px;
+    height: 196px;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 26px;
+    left: 200px;
+}
+ 
+ .product_image_save {
+      width: 220px;
+     height: 185px;
+     position: absolute;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     top: 35px;
+     left: 310px;
+ }
+
+ .sticker_container {
+     animation: fadeInDown .5s both;
+     animation-delay: 2s;
+ }
+
+ .yellow_container {
+     width: 125px;
+     height: 120px;
+     position: absolute;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     top: 20px;
+     right: 430px;
+     text-align: center;
+ }
+
+ .price_offer_1 {
+     position: absolute;
+     font-family: 'Aldi-black';
+     font-size: 30px;
+     line-height: 25px;
+     top: 10px;
+     left: 50%;
+     color: black;
+     transform: translateX(-50%);
+     white-space: nowrap;
+     text-align: center;
+ }
+ 
+ .price_unit_1 {
+     position: absolute;
+     font-family: 'Aldi-light';
+     font-size: 10px;
+     top: 32px;
+     left: 50%;
+     color: #fff;
+     transform: translateX(-50%);
+     animation: zoomeffect_arrow_text 1s 1 forwards;
+     animation-delay: 2.5s;
+     text-align: center;
+ }
+ 
+ .price_old_1 {
+     position: absolute;
+     font-family: 'Aldi-light';
+     font-size: 10px;
+     top: 42px;
+     left: 50%;
+     color: #fff;
+     transform: translateX(-50%);
+     animation: zoomeffect_arrow_text 1s 1 forwards;
+     animation-delay: 2.5s;
+     text-decoration: line-through;
+     text-align: center;
+ }
+
+.price_new_1 {
+  font-family: "Aldi-black";
+  font-size: 24px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.currency {
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.price_and_currency {
+  display: inline-block;
+}
+
+.price_with_ft {
+  color: white;
+  text-align: center;
+  margin-top: 55px;
+}
+ 
+ .red_container {
+     width: 125px;
+    height: 93px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 24px;
+     animation: zoomeffect_arrow 1s 1;
+     animation-delay: 2.5s;
+     text-align: center;
+ }
+
+ .slide_class_2,
+ .slide_class_2_stop,
+ .slide_2,
+ .slide_2_continue {
+     width: 970px;
+     height: 250px;
+     background: url('970x250_frame.png') center/cover no-repeat !important;
+     opacity: 0;
+     animation: fadeIn 0.01s 5s linear forwards;
+ }
+
+
+ .slide_2_stop {
+     width: 970px;
+     height: 250px;
+     background: url('970x250_frame.png') center/cover no-repeat !important;
+     opacity: 0;
+     animation: fadeIn 0.01s 5s linear forwards, fadeIn 0.01s 13.5s linear forwards;
+ }
+
+ .badge_container_2 {
+    width: 530px;
+    height: 200px;
+    padding-top: 10px;
+    padding-left: 10px;
+    position: absolute;
+    top: 24px;
+    left: 38px;
+    background-color: white;
+    border-radius: 4px;
+    opacity: 1;
+ }
+
+ .badge_2 {
+     width: 50px;
+     height: 50px;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+ }
+ 
+  .brand_name_2 {
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  line-height: 15px;
+  /*position: absolute;*/
+     font-family: 'Aldi-bold';
+     font-size: 15px;
+     /*top: 100px;
+    left: 12px;*/
+     max-width: 150px;
+
+}
+
+ .product_name_2 {
+     /*position: absolute;*/
+     font-family: 'Aldi-bold';
+     font-size: 15px;
+     /*top: 100px;
+    left: 12px;*/
+     max-width: 150px;
+ }
+
+ .product_description_2 {
+     /*position: absolute;*/
+     font-family: 'Aldi-regular';
+     font-size: 10px;
+     max-width: 150px;
+     /*top: 115px;
+    left: 12px;*/
+ }
+ .product_image_2 {
+        width: 365px;
+    height: 196px;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 26px;
+    left: 200px;
+}
+
+ .sticker_container_2 {
+     animation: fadeInDown .5s both;
+     animation-delay: 6s;
+ }
+
+ .yellow_container_2 {
+     width: 125px;
+     height: 120px;
+     position: absolute;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     top: 20px;
+     right: 430px;
+     text-align: center;
+ }
+
+ .price_offer_2 {
+     position: absolute;
+     font-family: 'Aldi-black';
+     font-size: 30px;
+     line-height: 25px;
+     top: 10px;
+     left: 50%;
+     color: black;
+     transform: translateX(-50%);
+     white-space: nowrap;
+     text-align: center;
+ }
+ 
+ .price_unit_2 {
+     position: absolute;
+     font-family: 'Aldi-light';
+     font-size: 10px;
+     top: 32px;
+     left: 50%;
+     color: #fff;
+     transform: translateX(-50%);
+     animation: zoomeffect_arrow_text 1s 1 forwards;
+     animation-delay: 6.5s;
+     text-align: center;
+ }
+ 
+ .price_old_2 {
+     position: absolute;
+     font-family: 'Aldi-light';
+     font-size: 10px;
+     top: 42px;
+     left: 50%;
+     color: #fff;
+     transform: translateX(-50%);
+     animation: zoomeffect_arrow_text 1s 1 forwards;
+     animation-delay: 6.5s;
+     text-decoration: line-through;
+     text-align: center;
+ }
+ 
+.price_new_2 {
+  font-family: "Aldi-black";
+  font-size: 24px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+ .red_container_2 {
+    width: 125px;
+    height: 93px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 24px;
+    animation: zoomeffect_arrow 1s 1;
+    animation-delay: 6.5s;
+    text-align: center;
+ }
+
+.slide_3 {
+     width: 970px;
+     height: 250px;
+     background-image: url('akcios_ujsag_online_970x250.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     position: relative;
+}
+ .slide_3_stop {
+     width: 970px;
+     height: 250px;
+     background-image: url('akcios_ujsag_online_970x250.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     position: relative;
+     opacity: 0;
+     animation: fadeIn .7s 10s ease-in forwards;
+ }
+
+
+ .slide_3_continue {
+     width: 970px;
+     height: 250px;
+     background-image: url('akcios_ujsag_online_970x250.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     position: relative;
+     opacity: 0;
+     animation: fadeIn .7s 10s ease-in forwards, fadeOut .7s 13s ease-out forwards;
+ }
+
+ .percentage_container_2 {
+     position: absolute;
+     animation: fadeInSlideDownLeftCorner 1s 10.1s ease-in forwards;
+ }
+
+ .percentage_bg_2 {
+    width: 120px;
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+ }
+
+ .percentage_2 {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 32px;
+    top: 38px;
+ }
+
+ .embleme_2 {
+     width: 80px;
+     height: 96px;
+     position: absolute;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     top: 8px;
+     right: 8px;
+     animation: fadeInSlideDownRightCorner 1s 10.1s ease-in forwards;
+ }
+
+ .headline_image_2 {
+     width: 570px;
+     height: 130px;
+     position: absolute;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     top: 10px;
+     left: 195px;
+     animation: fadeInSlideDown 1s 10.1s ease-in forwards;
+ }
+
+ .headline_image_br {
+     display: none;
+ }
+
+.cta {
+    position: absolute;
+    background-color: Transparent;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'KG';
+    text-transform: uppercase;
+    padding: 10px;
+    border: 1px solid white;
+    bottom: 47px;
+    left: 50%;
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeIn 1s 10.1s ease-in forwards;
+    transform: translateX(-50%);
+}
+
+.subheadline_2 {
+    position: absolute;
+    font-family: 'Aldi-light';
+    font-size: 18px;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+     .slide_4 {
+    width: 970px;
+    height: 250px;
+    background-image: url('970x250_slide_4.jpg');
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide_4_plus {
+    width: 970px;
+    height: 250px;
+    background-image: url('970x250_slide_4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    animation: fadeIn 0.7s 12.5s ease-in forwards,
+        fadeOut 0.7s 15.5s ease-out forwards;
+}

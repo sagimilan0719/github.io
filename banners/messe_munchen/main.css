@@ -1,0 +1,249 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+  overflow: hidden;
+  font-family: "NotoSans", sans-serif;
+}
+
+:root {
+  --primary-color: #141946;
+  --secondary-color: #e2001a;
+  --light-color: #fff;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+.d-none {
+  display: none;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url(NotoSans.ttf);
+}
+
+@font-face {
+  font-family: PxGrotesk-Bold;
+  src: url(Px-Grotesk-Bold.otf);
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url(NotoSans.ttf);
+}
+
+h1,
+p {
+  margin: 0 !important;
+}
+
+.background_image_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.background_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat !important;
+}
+
+.background_image_3 {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/*.shadow_layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+*/
+
+.logo_container {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.logo_image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.headline_shadow_layer,
+.logo_shadow_layer {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  background: #000;
+  opacity: 0.25;
+}
+
+.headline_shadow_layer {
+  inset: 0;
+  filter: blur(20px);
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+.logo_shadow_layer {
+    width: 160%;
+    height: 160%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.0) 75%
+    );
+    filter: blur(12px);
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.sticker_image_1_container {
+  position: absolute;
+  display: none;
+  z-index: 3;
+}
+
+.sticker_image_1 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.scene_2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.product_image_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.product_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.resizer_container,
+.cta_design {
+  position: absolute;
+  border: 1px solid transparent;
+  color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.headline_container_1 {
+  font-weight: 600;
+  text-align: center;
+}
+
+.headline_text_1 {
+  position: relative;
+  z-index: 1;
+}
+
+.subheadline_container_1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.cta_design {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  position: absolute;
+  width: max-content;
+  height: auto;
+  display: none;
+}
+
+.cta_container {
+  border: 1px solid transparent;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* variant class 'final' START */
+
+.final .background_image_container_1,
+.final .background_image_container_3,
+.final .shadow_layer {
+  display: none;
+}
+
+/* variant class 'final' END*/
+
+
+/* variant class 'cta' START */
+.cta .cta_container,
+.cta .cta_design {
+  display: block;
+}
+
+.headlineShadow .headline_shadow_layer {
+  display: block;
+}
+
+.logoShadow .logo_shadow_layer {
+  display: block;
+}
+
+
